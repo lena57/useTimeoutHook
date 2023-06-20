@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import useTimeout from './components/useTimeoutHook';
+import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
   const [timer, setTimer] = useState(0);
@@ -40,24 +41,38 @@ function App() {
   }, [timer]);
 
   return (
-    <div className="App">
-      <h3>useTimeout Hook</h3>
+    <div className='App'>
+    <div className="container flex-column align-items-center">
+      <h3>useTimeout Hook</h3> 
       <p>
         Create a hook to easily use setTimeout(callback, delay). Reset the timer
         if delay changes. DO NOT reset the timer if only callback changes.
       </p>
 
+      <div className="input-group mb-3">
+        <span className="input-group-text" id="inputGroup-sizing-default">Delay in sec</span>
+        <input type="text" className="input-group-text" 
+        aria-label="Sizing example input" 
+        aria-describedby="inputGroup-sizing-default"
+        value={delay} onChange={handleDelay}/>
+        <button className="btn btn-outline-success" type="button"
+         onClick={sendDelay}>Delay</button>
+
+      </div>
       <div>
-        <label>Type a number of seconds your want to delay</label>
-        <input type="number" value={delay} onChange={handleDelay} />
-        <button onClick={sendDelay}>Delay</button>
-        <p style={{ fontSize: '60px' }}>timer: {timer} sec</p>
+        <p style={{ fontSize: '40px' }}>timer: {timer} sec</p>
+
       </div>
 
-      <div>
-        <label>Type a text for console.log</label>
-        <input type="text" value={text} onChange={handleText} />
+      <div className="input-group mb-3">
+      <span className="input-group-text" id="inputGroup-sizing-default">Type a text</span>
+        <input type="text" className="input-group-text" 
+        aria-label="Sizing example input" 
+        aria-describedby="inputGroup-sizing-default"
+        value={text} onChange={handleText}/>
+
       </div>
+    </div>
     </div>
   );
 }

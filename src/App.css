@@ -1,5 +1,17 @@
 .App {
+  display: flex;
   text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.container{
+  display: flex;
+}
+
+.input-group{
+  justify-content: center;
 }
 
 .App-logo {
@@ -24,15 +36,3 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
